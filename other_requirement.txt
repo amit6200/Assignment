@@ -1,0 +1,59 @@
+-> Deployment on AWS
+step 1:1) Install AWS CLI AND SAM
+2) configure AWS CLI
+aws configure
+3) Install AWS SAM CLI
+
+step 2:Create AWS SAM project
+2:1) Initialize SAM project
+     sam init 
+     Replace app.py
+     update `template.ymal`
+step 3: Deploy the application
+3:1)Build the Project 
+    sam build
+3:2)Deploy the Project:
+    sam deploy --guided
+
+
+-> Documentation
+Local Setup
+1)Clone the Repository:
+   git clone <repository_url>
+2)Navigate to the Project Directory:
+   cd <project_directory>
+3)Set Up Virtual Environment:
+   virtualenv venv
+   source venv/bin/activate  
+4)Install Dependencies:
+   pip install -r requirements.txt
+5)Run the Application:
+   python app.py
+
+
+-> AWS Setup  
+AWS Setup
+1)Install AWS CLI and SAM CLI (if not already installed).
+2)Configure AWS CLI:
+   aws configure
+3)Initialize SAM Project:
+   sam init
+4)Build the Project:
+   sam build
+5)Deploy the Project:
+   sam deploy --guided 
+
+-> Testing Endpoints  
+1) Create a product
+   curl -X POST <API_URL>/products -H "Content-Type: application/json" -d '{"name": "Product1", "price": 10.0, "stock": 100}'
+2) Get All Products:
+   curl <API_URL>/products
+3)Get a Product by ID:
+   curl <API_URL>/products/1
+4)Update a Product by ID:
+   curl -X PUT <API_URL>/products/1 -H "Content-Type: application/json" -d '{"name": "UpdatedProduct", "price": 15.0, "stock": 80}'
+5)Delete a Product by ID:
+   curl -X DELETE <API_URL>/products/1
+
+
+
